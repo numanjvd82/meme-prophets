@@ -8,6 +8,7 @@ export default {
         fredoka: ["Fredoka One", "cursive"],
       },
       backgroundImage: {
+        bgImg: "url('/img/bg.png')",
         bgPattern: "url('/img/bg.svg')",
         wavePattern: "url('/img/wave.svg')",
       },

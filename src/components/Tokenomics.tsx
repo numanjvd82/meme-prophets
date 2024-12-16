@@ -1,8 +1,12 @@
+import PartnershipGrid from "./PartnershipGrid";
 import { TokenInfoCard } from "./TokenInfoCard";
 
 export default function Tokenomics() {
   return (
-    <div id="tokenomics" className="my-10 h-full md:px-20">
+    <div
+      id="tokenomics"
+      className="my-10 h-full md:px-20 flex flex-col justify-center items-center"
+    >
       <h1 className="my-10 text-center text-5xl mb-4 md:text-6xl font-poppins font-bold leading-loose">
         Tokenomics
       </h1>
@@ -21,6 +25,8 @@ export default function Tokenomics() {
           truncate={true}
         />
       </div>
+
+      <PartnershipGrid />
     </div>
   );
 }

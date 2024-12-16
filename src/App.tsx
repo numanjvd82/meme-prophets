@@ -2,6 +2,8 @@
 
 import Lenis from "lenis";
 import { useEffect } from "react";
+
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Roadmap from "./components/Roadmap";
 import Tokenomics from "./components/Tokenomics";
@@ -18,10 +20,11 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-bgPattern bg-cover bg-repeat bg-fixed flex flex-col overflow-hidden">
+    <div className="bg-bgPattern bg-cover bg-repeat bg-fixed flex flex-col overflow-hidden font-poppins">
       <Hero />
       <Tokenomics />
       <Roadmap />
+      <Footer />
     </div>
   );
 }
