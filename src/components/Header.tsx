@@ -59,10 +59,8 @@ export default function Header() {
   return (
     <nav className="bg-white mt-4 mx-4 sm:mx-16 p-3 rounded-full border-2 border-black relative">
       <div className="flex justify-between items-center">
-        {/* Logo */}
         <div className="text-xl uppercase font-fredoka ">$Prophets</div>
 
-        {/* Desktop Menu */}
         <ul className="hidden sm:flex items-center gap-2 font-bold uppercase text-sm">
           {links.map(({ link, name }, i) => (
             <li
@@ -79,14 +77,12 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* Social Icons */}
         <div className="hidden sm:flex gap-2">
           <Icon icon={Telegram} link="#" />
           <Icon icon={Twitter} link="#" />
           <Icon icon={DexScreener} link="#" />
         </div>
 
-        {/* Burger Menu Button */}
         <button
           className="sm:hidden focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
