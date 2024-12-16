@@ -1,5 +1,5 @@
-import { Card } from "./Card";
-import { Cloud } from "./Cloud";
+import { Card } from "./ui/Card";
+import { Cloud } from "./ui/Cloud";
 
 export default function Roadmap() {
   return (

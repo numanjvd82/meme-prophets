@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import Divider from "./Divider";
 import Header from "./Header";
+import Divider from "./ui/Divider";
 
 export default function Hero() {
   return (
-    <div id="hero" className="h-screen flex flex-col">
+    <div id="home" className="h-screen flex flex-col">
       <Header />
       <div className="flex-grow flex flex-col justify-center items-center">
         <motion.div

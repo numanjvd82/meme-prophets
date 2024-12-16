@@ -1,7 +1,8 @@
 /// <reference types="vite-plugin-svgr/client" />
 
-import Lenis from "lenis";
-import { useEffect } from "react";
+import { LenisRef, ReactLenis } from "lenis/react";
+import { cancelFrame, frame } from "motion/react";
+import { useEffect, useRef } from "react";
 
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
@@ -9,23 +10,26 @@ import Roadmap from "./components/Roadmap";
 import Tokenomics from "./components/Tokenomics";
 
 function App() {
+  const lenisRef = useRef<LenisRef>(null);
+
   useEffect(() => {
-    const lenis = new Lenis();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    function raf(time: any) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    function update(data: { timestamp: number }) {
+      lenisRef.current?.lenis?.raf(data.timestamp);
     }
-    requestAnimationFrame(raf);
+    frame.update(update, true);
+
+    return () => cancelFrame(update);
   }, []);
 
   return (
-    <div className="bg-bgPattern bg-cover bg-repeat bg-fixed flex flex-col overflow-hidden font-poppins">
-      <Hero />
-      <Tokenomics />
-      <Roadmap />
-      <Footer />
-    </div>
+    <ReactLenis ref={lenisRef} options={{ duration: 1 }} root>
+      <div className="bg-bgPattern bg-cover bg-repeat bg-fixed flex flex-col overflow-hidden font-poppins">
+        <Hero />
+        <Tokenomics />
+        <Roadmap />
+        <Footer />
+      </div>
+    </ReactLenis>
   );
 }
 

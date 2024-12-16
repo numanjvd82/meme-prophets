@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import DexScreener from "../assets/dex-screener.svg";
 import Telegram from "../assets/telegram.svg";
 import Twitter from "../assets/twitter.svg";
-import { Icon } from "./Icon";
+import { Icon } from "./ui/Icon";
 
 export default function Footer() {
   return (
@@ -12,10 +12,8 @@ export default function Footer() {
       transition={{ duration: 1.2, ease: "easeOut" }}
       className="relative bg-transparent text-white text-center py-8"
     >
-      {/* Glass-Like Background Overlay */}
       <div className="absolute inset-0 bg-black/30 backdrop-blur-md border-t border-white/20"></div>
 
-      {/* Footer Content */}
       <div className="relative z-10">
         <div className="mb-6">
           <motion.h3
@@ -37,19 +35,18 @@ export default function Footer() {
           </motion.button>
         </div>
 
-        {/* Links and Icons */}
         <div className="flex flex-col md:flex-row justify-center items-center mb-6">
           <nav className="flex space-x-6 mb-4 md:mb-0">
             {["Home", "Tokenomics", "Roadmap", "Community"].map(
               (link, index) => (
                 <motion.a
                   key={link}
-                  href="#"
+                  href={`#${link.toLowerCase()}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-                  className="hover:text-primary transition"
+                  className="hover:text-primary transition cursor-pointer"
                 >
                   {link}
                 </motion.a>
@@ -70,7 +67,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Section */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

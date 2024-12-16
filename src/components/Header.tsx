@@ -4,7 +4,7 @@ import { useState } from "react";
 import DexScreener from "../assets/dex-screener.svg";
 import Telegram from "../assets/telegram.svg";
 import Twitter from "../assets/twitter.svg";
-import { Icon } from "./Icon";
+import { Icon } from "./ui/Icon";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);

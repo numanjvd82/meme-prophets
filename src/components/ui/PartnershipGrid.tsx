@@ -10,7 +10,7 @@ export default function PartnershipGrid() {
   return (
     <div className="flex flex-col items-center p-8 font-poppins my-10">
       <h1 className="text-6xl font-bold text-black mb-8 pb-4">PARTNERSHIP</h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-6 rounded-lg shadow-[8px_8px_0px_rgba(0,0,0,1)]">
+      <div className="border-2 border-black  grid grid-cols-2 md:grid-cols-4 gap-6 p-6 rounded-lg shadow-[8px_8px_0px_rgba(0,0,0,1)]">
         {cards.map((_, index) => (
           <motion.div
             key={index}

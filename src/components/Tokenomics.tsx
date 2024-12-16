@@ -1,5 +1,5 @@
-import PartnershipGrid from "./PartnershipGrid";
-import { TokenInfoCard } from "./TokenInfoCard";
+import PartnershipGrid from "./ui/PartnershipGrid";
+import { TokenInfoCard } from "./ui/TokenInfoCard";
 
 export default function Tokenomics() {
   return (
